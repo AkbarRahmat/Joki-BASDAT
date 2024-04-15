@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Website Sederhana</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Basis Data</h1>
+    </header>
+    <nav>
+        <div class="navbar">
+            <ul>
+                <li ><img src="logoubepe.jpg"class="logo" alt=""></li>
+                <li><a href="https://ubpkarawang.ac.id">Ubpkarawang.ac.id</a></li>
+                <li><a href="https://adirp.id">Adirp.id</a></li>
+                <li ><img src="f1.png" class="dosen"alt=""></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h2>Apa itu Attribute, Entitas, dan Relasi dalam ERD?</h2>
+        <p>
+            <ul>
+                <li><b>Atribute (Atribut):</b>
+                <p>
+                    Atribut adalah sifat atau karakteristik dari sebuah entitas dalam ERD. Misalnya, jika Anda memiliki entitas "Pegawai," atributnya bisa mencakup nama, nomor identifikasi, alamat, dan sebagainya. 
+                </p>
+                </li>
+                <li><b>Entitas (Entity):</b>
+                <p>
+                    Entitas adalah objek yang memiliki makna dalam suatu domain dan dapat disimpan dalam basis data. Contoh entitas meliputi "Pelanggan," "Produk," atau "Pesanan."
+                </p></li>
+                <li><b>Relasi (Relationship)</b>
+                <p>Relasi menggambarkan hubungan antara entitas dalam ERD. Contoh relasi meliputi "Seorang Pelanggan melakukan Pemesanan" atau "Sebuah Produk termasuk dalam Kategori."</p></li>
+            </ul>
+            <div class="hero">
+                <h2>Contoh Graf ERD:</h2>
+                <div class="graf"></div>
+            </div>
+        </p>
+        <h2>PrimaryKey, ForeignKey, dan Candidate Key</h2>
+        <p>
+            <ul>
+                <li><b>PrimaryKey (Kunci Primer):</b>
+                <p>
+                    Primary key adalah atribut atau kombinasi atribut yang unik mengidentifikasi setiap baris atau tupel dalam sebuah tabel. Ini digunakan untuk memastikan keunikan entitas dalam basis data. Contoh: ID pelanggan adalah primary key dalam tabel Pelanggan.
+                </p>
+                </li>
+                <li><b>ForeignKey (Kunci Asing)</b>
+                <p>
+                    Foreign key adalah atribut dalam sebuah tabel yang mengacu pada primary key di tabel lain. Ini digunakan untuk menghubungkan dua tabel bersama. Contoh: ID pelanggan dalam tabel Pesanan adalah foreign key yang mengacu pada primary key ID pelanggan dalam tabel Pelanggan.
+                </p></li>
+                <li><b>Candidate Key (Kunci Kandidat):</b>
+                <p>Candidate key adalah atribut atau kombinasi atribut lain yang dapat berpotensi digunakan sebagai primary key. Mereka memiliki sifat unik. Contoh: Selain ID pelanggan, nomor telepon pelanggan juga dapat digunakan sebagai candidate key dalam tabel Pelanggan.</p></li>
+            </ul>
+        </p>
+        <h2>Relation dalam ERD dan Mengapa Many-to-Many Tidak Disarankan</h2>
+        <p>
+            <ul>
+                <li><b>Relation (Relasi): </b>
+                <p>
+                    Dalam ERD, relasi menggambarkan bagaimana entitas terhubung satu sama lain. Relasi dapat berupa one-to-one, one-to-many, atau many-to-many, tergantung pada hubungan antara entitas tersebut
+                </p>
+                </li>
+                <li><b>Many-to-Many: </b>
+                <p>
+                    Hubungan many-to-many terjadi ketika banyak entitas dalam satu tabel terhubung dengan banyak entitas dalam tabel lain. Ini bisa menjadi masalah dalam perancangan basis data karena ERD umumnya tidak mendukung hubungan many-to-many secara langsung. Biasanya, hubungan many-to-many harus dipecah menjadi dua relasi one-to-many yang dihubungkan oleh tabel perantara.
+            
+        </p>
+       <p>Misalnya, dalam ERD toko online, banyak produk dapat dimiliki oleh banyak pelanggan, dan banyak pelanggan dapat memiliki banyak produk. Hubungan many-to-many harus dipecah menjadi tabel tambahan (biasanya disebut tabel perantara atau junction table) yang menghubungkan produk dan pelanggan.</p>
+
+        <h2>Normalisasi dalam ERD</h2>
+        <p>
+            Normalisasi adalah proses desain basis data yang bertujuan untuk mengurangi redudansi data dan meningkatkan integritas data. Dalam normalisasi, tabel yang memiliki data yang terduplikasi atau tidak efisien dipecah menjadi beberapa tabel yang lebih kecil dan terstruktur.
+            Normalisasi menghasilkan tabel yang disusun sesuai dengan aturan tertentu, seperti bentuk normal pertama (1NF), normalisasi kedua (2NF), dan seterusnya. Hal ini membantu menghindari anomali data dan menjaga data tetap konsisten.
+            
+            Misalnya, jika Anda memiliki tabel Pesanan yang mencakup data pelanggan, alamat pengiriman, dan produk yang dibeli, normalisasi akan memisahkan data ini menjadi tabel Pelanggan, Alamat Pengiriman, dan Produk yang terkait dengan kunci asing yang menghubungkannya.
+        </p>
+        <h2>Denormalisasi dalam ERD</h2>
+        <p>
+            Denormalisasi pada Entity-Relationship Diagram (ERD) merujuk pada suatu proses di mana struktur data dalam database dibuat lebih sederhana dengan menggabungkan tabel-tabel yang sebelumnya telah dinormalisasi. Normalisasi adalah proses desain basis data yang bertujuan untuk mengurangi redundansi dan dependensi data. Namun, terkadang, untuk meningkatkan kinerja atau memudahkan pengambilan data, beberapa desainer database memilih untuk melakukan denormalisasi.
+
+            Denormalisasi melibatkan penggabungan tabel-tabel yang sebelumnya telah dinormalisasi, yang dapat menghasilkan beberapa redundansi data. Ini bertentangan dengan prinsip normalisasi, tetapi dapat diterima dalam beberapa situasi tertentu, terutama ketika kecepatan akses data menjadi prioritas utama.
+
+            Bebarap alasan umum untuk melakukan denormalisasi ERD temasuk:
+        </p>
+        <ol>
+            <li>Peningkatan Kerja: <p>
+                Dengan menggabungkan tabel-tabel, query dapat dieksekusi lebih cepat karena data terkait dapat diambil dengan lebih efisien.
+            </p>
+            </li>
+            <li>Pengurangan Join: 
+                <P> Denormalisasi dapat mengurangi jumlah operasi join yang diperlukan untuk mengambil data, sehingga mengoptimalkan kueri.</P>
+            </li>
+            <li>Kesederhanaan Kode Aplikasi: <P>
+                Dalam beberapa kasus, denormalisasi dapat membuat pengembangan aplikasi lebih sederhana karena struktur data menjadi lebih mudah dimengerti.
+            </P></li>
+        </ol>
+        <P>Namun, perlu diingat bahwa denormalisasi juga memiliki beberapa kelemahan, seperti peningkatan redundansi data, kompleksitas pemeliharaan data, dan potensi inkonsistensi data. Oleh karena itu, keputusan untuk melakukan denormalisasi harus dipertimbangkan dengan hati-hati, dan faktor-faktor seperti kecepatan akses data, kebutuhan aplikasi, dan ukuran database harus diperhitungkan.
+
+
+
+
+        </P>
+    </main>
+    <footer>
+        <p>Copyright 2023 &copy; M Nurkholis Ridwan.</p>
+    </footer>
+</body>
+</html>
+
+</body>
+</html>
